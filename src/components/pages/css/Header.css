@@ -1,0 +1,32 @@
+
+
+.col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.header__logo {
+    padding: 15px 0;   
+}
+a {
+    display: inline-block;
+}
+.header__menu {
+    padding: 24px 0;    
+}
+.header__menu ul li.active a {
+    color: #7fad39;
+}
+.header__cart {
+    text-align: right;
+    padding: 24px 0;
+}
+.header__cart .header__cart__price {
+    font-size: 14px;
+    color: #6f6f6f;
+    display: inline-block;
+}
+.header__cart ul li a i {
+    font-size: 18px;
+    color: #1c1c1c;
+}
