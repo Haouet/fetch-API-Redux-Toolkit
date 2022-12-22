@@ -9,6 +9,13 @@ export const fetchProducts = createAsyncThunk(
     return response.data
   }
 )
+export const addProduct = createAsyncThunk(
+  'products/addProducts',
+  async () => {
+    const response = await axios.post(`${baseURL}/product/add`)
+    return response.data
+  }
+)
 
 
 

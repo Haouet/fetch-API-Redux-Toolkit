@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../features/productsSlice';
+import AddProduct from './backOffice/AddProduct';
+import Product from './block/Product';
 
 function Home() {
   const products = useSelector((state) => state.products.data);
@@ -17,11 +19,30 @@ function Home() {
   }, [products])
 
   return (
-    <div>
-      {data?.map(item => (
-        <h2 key={item._id} >{item.title}</h2>
-      ))}
-    </div>
+    <>
+      <div className='row'>
+        <div className='col-lg-3'>
+          <h1>Items Products</h1>
+          {data?.map(item => (
+            <>
+              <li key={item._id} >{item.title}({item.stock})</li>
+            </>
+          ))}
+        </div>
+        <div className='col-lg-6'>
+          <AddProduct />
+        </div>
+      </div>
+      <div className='row'>
+        
+        {data?.map(item => (
+            
+              <Product key={item._id} {...item} />
+           
+          ))}
+           
+      </div>
+    </>
   )
 }
 
